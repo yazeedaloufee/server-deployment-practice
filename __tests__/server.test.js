@@ -7,7 +7,8 @@ const request = supertest(server.app);
 describe('server',()=>{
 it('should get 404 status', async()=>{
     const response = await request.get('/foo');
-    expect(responce.status).toBe(404)
+    expect(response.status).toBe(404);
+    console.log('request in server.test.js',request)
 })
 
 it('should get a welcome messay',async()=>{
@@ -21,7 +22,7 @@ it('should get a welcome messay',async()=>{
 
 it('should get an error', async()=>{
 
-    const reponse= await request.get('/bad');
+    const response= await request.get('/bad');
     expect(response.status).toEqual(500);
 })
 
